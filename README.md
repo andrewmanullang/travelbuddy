@@ -45,10 +45,15 @@ Before you begin, ensure you have the following installed:
 
 3. **Set up environment variables**
    
-   Create a `.env` file in the root directory:
+   Copy the example environment file and add your API key:
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Then edit `.env` and add your Gemini API key:
    ```env
    GEMINI_API_KEY=your_gemini_api_key_here
-   MODEL=gemini-2.0-flash-exp
+   MODEL=gemini-3.1-flash-lite-preview
    PORT=3000
    ```
 
@@ -93,7 +98,8 @@ travel-buddy/
 ├── index.js              # Backend API server
 ├── index.html            # Frontend HTML structure
 ├── script.js             # Frontend JavaScript logic
-├── .env                  # Environment variables (create this)
+├── .env                  # Environment variables (create from .env.example)
+├── .env.example          # Environment variables template
 ├── package.json          # Node.js dependencies
 └── README.md            # Project documentation
 ```
@@ -105,7 +111,7 @@ travel-buddy/
 The backend uses Express.js and the Google Generative AI SDK:
 
 - **Port**: Default is 3000 (configurable via `.env`)
-- **Model**: Uses `gemini-2.0-flash-exp` (configurable via `.env`)
+- **Model**: Uses `gemini-3.1-flash-lite-preview` (configurable via `.env`)
 - **CORS**: Enabled for frontend communication
 - **Temperature**: Set to 0.9 for creative responses
 
@@ -206,6 +212,7 @@ PORT=3001
 ## 🔐 Security Notes
 
 - **Never commit your `.env` file** - Add it to `.gitignore`
+- **Use `.env.example`** - Template file is included for easy setup
 - **API Key Protection** - Keep your Gemini API key private
 - **Rate Limiting** - The app includes retry logic for rate limits
 - **Input Validation** - Backend validates conversation data
