@@ -239,9 +239,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
-
-Project Link: [https://github.com/yourusername/travel-buddy](https://github.com/yourusername/travel-buddy)
+Project Link: [https://github.com/andrewmanullang/travelbuddy](https://github.com/andrewmanullang/travelbuddy)
 
 ## 🗺️ Roadmap
 
