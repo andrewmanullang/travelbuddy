@@ -29,9 +29,15 @@ const appendMessage = (role, text) => {
   const bubble = document.createElement('div');
   bubble.className = `p-4 rounded-2xl shadow-sm border ${role === 'user'
     ? 'bg-emerald-600 text-white border-emerald-500 rounded-tr-none'
-    : 'bg-white border-slate-200 text-slate-700 rounded-tl-none'
+    : 'bg-white border-slate-200 text-slate-700 rounded-tl-none prose prose-sm max-w-none prose-emerald'
     }`;
-  bubble.innerText = text;
+  
+  if (role === 'user') {
+    bubble.innerText = text;
+  } else {
+    // Parse the markdown and sanitize it before rendering HTML
+    bubble.innerHTML = DOMPurify.sanitize(marked.parse(text));
+  }
 
   wrapper.appendChild(avatar);
   wrapper.appendChild(bubble);
