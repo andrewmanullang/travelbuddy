@@ -65,8 +65,11 @@ Before you begin, ensure you have the following installed:
 ## 🎯 Usage
 
 1. **Start the backend server**
+
+   Make sure to run this from the **root directory** of the project so that your `.env` file loads correctly. We recommend using `nodemon` for automatic restarts during development:
+   
    ```bash
-   node index.js
+   npx nodemon server/index.js
    ```
    
    You should see:
